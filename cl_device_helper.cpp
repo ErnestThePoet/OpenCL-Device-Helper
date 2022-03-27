@@ -351,8 +351,6 @@ void CLDeviceHelper::GetSuitableGlobalLocalSize(
     size_t* global_size_ret,
     size_t* local_size_ret) const
 {
-    CHECK_INITIALIZATION(this->is_initialized_);
-
     cl_int status = CL_SUCCESS;
 
     // max work dims
