@@ -27,5 +27,6 @@ This utility helps you quickly get a `cl_device_id` either from keyboard input o
   - The calculated `local_size_ret` is as much as is possible within the give divice's capability. The calculated element in `global_size_ret` is the minimum multiple of the corresponding element in `local_size_ret` not less than the corresponding element in `work_item_size`.
   - For instance, `work_item_size`=[30, 55], `local_size_ret`=[16, 16], and then `global_size_ret`=[32, 64].
  
+All public member functions of `CLDeviceHelper` may throw a `std::runtime_error` if an error occurs. You should handle them properly.
  
 #### Happy Coding!
