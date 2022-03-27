@@ -25,7 +25,7 @@ This utility helps you quickly get a `cl_device_id` either from keyboard input o
 5. When you feel headache about calculating a proper `global_work_size` and `local_work_size` for `clEnqueueNDRangeKernel`:
   - Just call this member of your helper instance `GetSuitableGlobalLocalSize(const cl_device_id device_id,const cl_uint work_dim,const size_t* work_item_size,size_t* global_size_ret,size_t* local_size_ret)`. It will take care of querying the given device's specification, calculate suitable global&local sizes, and store results in `global_size_ret` and `local_size_ret` whose memory must be already allocated.
   - The calculated `local_size_ret` is as much as is possible within the give divice's capability. The calculated element in `global_size_ret` is the minimum multiple of the corresponding element in `local_size_ret` not less than the corresponding element in `work_item_size`.
-  - For instance, `work_item_size`=[30,55], `local_size_ret`=[16,16], and then `global_size_ret`=[32,64].
+  - For instance, `work_item_size`=[30, 55], `local_size_ret`=[16, 16], and then `global_size_ret`=[32, 64].
  
  
 #### Happy Coding!
