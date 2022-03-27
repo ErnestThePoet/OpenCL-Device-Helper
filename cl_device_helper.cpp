@@ -283,7 +283,7 @@ const char* CLDeviceHelper::GetDeviceTypeTag(const cl_device_type device_type) c
     }
 }
 
-cl_device_id CLDeviceHelper::GetPreferredDeviceId(
+cl_device_id CLDeviceHelper::GetDeviceIdWithPreference(
     const VendorPreferenceList& preference_lower) const
 {
     CHECK_INITIALIZATION(this->is_initialized_);
@@ -344,7 +344,7 @@ cl_device_id CLDeviceHelper::GetPreferredDeviceId(
     return nullptr;
 }
 
-void CLDeviceHelper::GetBestGlobalLocalSize(
+void CLDeviceHelper::GetSuitableGlobalLocalSize(
     const cl_device_id device_id,
     const cl_uint work_dim,
     const size_t* work_item_size,

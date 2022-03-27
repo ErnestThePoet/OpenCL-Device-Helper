@@ -50,9 +50,9 @@ public:
 	void Initialize();
 	void PrintAllDevices() const;
 	cl_device_id GetDeviceIdFromInput() const;
-	cl_device_id GetPreferredDeviceId(
+	cl_device_id GetDeviceIdWithPreference(
 		const VendorPreferenceList& preference_lower = CLDeviceHelper::kPreferenceANI) const;
-	void GetBestGlobalLocalSize(
+	void GetSuitableGlobalLocalSize(
 		const cl_device_id device_id,
 		const cl_uint work_dim,
 		const size_t* work_item_size,
