@@ -8,7 +8,7 @@ This utility helps you quickly get a `cl_device_id` either from keyboard input o
 3. Call `helper.Initialize();` to initialize the helper. The helper will query and store information about all platforms and their devices on your computer.
 4. Get your desired `cl_device_id` in either way below:
   - With a vencor preference list: `auto device_id = helper.GetDeviceIdWithPreference(preference_lower);`
-    - A vendor preference list (whose type is `VendorPreferenceList`, an alias for `std::vector<const char*>`) contains vendor name keywords in lower case. The keyword with lower index will have higher priority. The helper will first seek for GPU in order of the list, then other device types in order of the list. If no device contains any of the keywords given, the first device on your computer will be returned.
+    - A vendor preference list (whose type is `VendorPreferenceList`, an alias for `std::vector<const char*>`) contains vendor name keywords in lower case. The keyword with lower index will have higher priority. The helper will first seek for GPU in order of the list, then other device types in order of the list. If no device contains any of the keywords given, the first GPU device on your computer will be returned; if no GPU device available, the first device on your computer will be returned.
     - We have six pre-defined preference lists available:
       - `CLDeviceHelper::kPreferenceANI` (AMD > Nvidia > Intel)
       - `CLDeviceHelper::kPreferenceNAI` (Nvidia > AMD > Intel)
